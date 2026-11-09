@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9ee0ff"/>
+      <stop offset="0.62" stop-color="#bff0ff"/>
+      <stop offset="0.63" stop-color="#8fd86f"/>
+      <stop offset="1" stop-color="#5fbf45"/>
+    </linearGradient>
+    <radialGradient id="skin" cx="0.42" cy="0.35" r="0.75">
+      <stop offset="0" stop-color="#8be86f"/>
+      <stop offset="1" stop-color="#3fae32"/>
+    </radialGradient>
+    <radialGradient id="belly" cx="0.5" cy="0.4" r="0.7">
+      <stop offset="0" stop-color="#f3ffd6"/>
+      <stop offset="1" stop-color="#c9ec8f"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#bg)"/>
+  <!-- sun -->
+  <circle cx="430" cy="78" r="42" fill="#ffe066"/>
+  <!-- lily pad -->
+  <ellipse cx="256" cy="430" rx="190" ry="42" fill="#2f8f2a"/>
+  <ellipse cx="256" cy="424" rx="180" ry="36" fill="#3fa83a"/>
+  <!-- body -->
+  <ellipse cx="256" cy="300" rx="185" ry="140" fill="url(#skin)"/>
+  <ellipse cx="256" cy="345" rx="115" ry="80" fill="url(#belly)"/>
+  <!-- feet -->
+  <ellipse cx="160" cy="420" rx="58" ry="24" fill="#4cc23c"/>
+  <ellipse cx="352" cy="420" rx="58" ry="24" fill="#4cc23c"/>
+  <!-- eye bumps -->
+  <circle cx="170" cy="185" r="72" fill="url(#skin)"/>
+  <circle cx="342" cy="185" r="72" fill="url(#skin)"/>
+  <circle cx="172" cy="188" r="54" fill="#fff"/>
+  <circle cx="340" cy="188" r="54" fill="#fff"/>
+  <circle cx="182" cy="198" r="28" fill="#111"/>
+  <circle cx="330" cy="198" r="28" fill="#111"/>
+  <circle cx="192" cy="186" r="10" fill="#fff"/>
+  <circle cx="340" cy="186" r="10" fill="#fff"/>
+  <!-- cheeks -->
+  <ellipse cx="128" cy="290" rx="30" ry="18" fill="#ff8fab" opacity="0.85"/>
+  <ellipse cx="384" cy="290" rx="30" ry="18" fill="#ff8fab" opacity="0.85"/>
+  <!-- mouth -->
+  <path d="M176 268 Q256 340 336 268" fill="none" stroke="#1f5c19" stroke-width="14" stroke-linecap="round"/>
+  <path d="M232 296 Q256 330 280 296 Z" fill="#ff5f8a"/>
+  <!-- crown-ish heart -->
+  <path d="M256 128 c-10 -22 -44 -16 -40 10 c3 18 40 36 40 36 s37 -18 40 -36 c4 -26 -30 -32 -40 -10z" fill="#ff5fa2"/>
+</svg>
