@@ -119,6 +119,45 @@ h3:not(:first-child){margin-top:22px}
 .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px}
 .gal img{width:100%;border-radius:14px;box-shadow:0 0 0 4px #fff,0 0 0 7px #ffd6ea;transform:rotate(var(--r))}
 .row{display:flex;gap:12px}.row .big{flex:1}
+.sw.lock{filter:grayscale(.85);opacity:.55}
+.sw.pat{background:#fff;overflow:hidden}.sw.pat svg{width:100%;height:100%;display:block;border-radius:50%}
+.emo button.sel{box-shadow:0 0 0 4px #fff,0 0 0 8px var(--pink),0 6px 0 6px #d94584;background:#ffe1f0}
+.emo button small{font-size:13px;display:block;font-weight:800;margin-top:-6px}
+.gcards{display:grid;gap:18px}
+.gcard{display:grid;grid-template-columns:72px 1fr;align-items:center;text-align:left;gap:2px 14px;padding:18px;border-radius:26px;background:var(--soft);
+ box-shadow:0 0 0 4px #fff,0 0 0 7px #ffd6ea,0 7px 0 4px #f6c1db;transform:rotate(var(--r,0deg))}
+.gcard:active{transform:scale(.96)}
+.gcard i{grid-row:1/3;font-style:normal;font-size:54px;text-align:center}.gcard b{font-size:21px}.gcard span{font-size:15px;font-weight:700;opacity:.75}
+.game{position:fixed;inset:0;z-index:40;display:none;flex-direction:column;gap:12px;
+ padding:max(12px,env(safe-area-inset-top)) max(14px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(14px,env(safe-area-inset-left));
+ background:#ffe6f2 radial-gradient(#ffc9e2 2.5px,transparent 3px) 0 0/30px 30px}
+.game.show{display:flex}
+.ghead{display:flex;align-items:center;gap:12px;flex:none}.ghead h2{margin:0;font-size:26px}
+.gbody{flex:1;min-height:0;display:flex;flex-direction:column}
+.gwrap{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,40%);gap:14px}
+@media (orientation:portrait){.gwrap{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,52fr) minmax(0,48fr)}}
+.gstage{background:#fff;border-radius:30px;box-shadow:0 7px 0 #f2a5c8,0 16px 34px rgba(170,60,120,.2);position:relative;min-height:0;overflow:hidden}
+.gstage svg{position:absolute;inset:0;width:100%;height:100%;touch-action:none}
+.showbar{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);display:flex;align-items:center;gap:10px;background:#fff;border-radius:999px;
+ padding:8px 8px 8px 18px;font-size:18px;font-weight:800;box-shadow:0 0 0 4px #ff9ccf,0 8px 20px rgba(0,0,0,.18);white-space:nowrap;z-index:5}
+.showbar button{padding:10px 16px;border-radius:999px;color:#fff;font-weight:900;background:linear-gradient(#ff8cc0,#ff5fa2);box-shadow:0 4px 0 #d94584}
+.showbar .x{background:#f1f1f1;color:#999;box-shadow:none;padding:10px 14px}
+.runway{flex:1;min-height:0;position:relative;border-radius:30px;overflow:hidden;background:#2b1650}
+.runway svg{position:absolute;inset:0;width:100%;height:100%}
+.walker{transform-origin:0 0;animation:walk 3.2s ease-out both}
+@keyframes walk{0%{transform:translateY(-170px) scale(.48)}20%{transform:translateY(-134px) scale(.58) rotate(-2deg)}40%{transform:translateY(-98px) scale(.68) rotate(2deg)}
+ 60%{transform:translateY(-62px) scale(.79) rotate(-2deg)}80%{transform:translateY(-26px) scale(.9) rotate(2deg)}100%{transform:translateY(0) scale(1)}}
+.fl{animation:fl 1.3s infinite;opacity:0}@keyframes fl{0%,100%{opacity:0}8%{opacity:1}22%{opacity:0}}
+.judges{position:absolute;left:0;right:0;bottom:14px;display:flex;justify-content:center;gap:12px;padding:0 10px}
+.judge{background:#fff;border-radius:22px;padding:10px 12px;text-align:center;min-width:100px;box-shadow:0 0 0 4px #ff9ccf,0 8px 16px rgba(0,0,0,.25);animation:pop .4s ease both}
+.judge i{font-style:normal;font-size:40px;display:block}.judge b{font-size:36px;color:var(--pink);display:block;line-height:1.1}.judge small{font-weight:800;font-size:13px}
+.result{position:absolute;left:50%;top:14px;transform:translateX(-50%);width:min(92%,540px);background:#fff;border-radius:26px;padding:14px 18px;text-align:center;
+ box-shadow:0 0 0 5px #ffe066,0 10px 24px rgba(0,0,0,.25);animation:pop .4s ease both}
+.result h2{margin:0;font-size:30px}.result p{margin:6px 0;font-weight:800;font-size:17px}
+.result .row .big{margin-top:10px;padding:12px;font-size:18px}
+.tips{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:8px 0}.tips span{background:var(--soft);border-radius:999px;padding:5px 11px;font-size:14px;font-weight:800}
+.tips span.ok{background:#e6ffef;box-shadow:0 0 0 2px #9be3b6 inset}
+.themebig{font-size:84px;line-height:1;margin:6px 0}
 #flash{position:fixed;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:60}
 #flash.go{animation:flash .5s ease}
 @keyframes flash{0%{opacity:.95}100%{opacity:0}}
@@ -144,6 +183,7 @@ h3:not(:first-child){margin-top:22px}
    <button class="tbtn cam" id="btnPhoto" aria-label="Fotoğraf çek">📸</button>
   </div>
   <div class="stagewrap" id="stageWrap"><svg id="stage" viewBox="0 0 400 640" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+   <defs id="dyn"></defs>
    <defs>
     <filter id="stk" x="-20%" y="-12%" width="140%" height="126%">
      <feMorphology in="SourceAlpha" operator="dilate" radius="6" result="d"/>
@@ -167,6 +207,7 @@ h3:not(:first-child){margin-top:22px}
    <g id="tag" filter="url(#stk2)"></g>
   </svg></div>
   <div id="trash">🗑️</div>
+  <div id="showBar"></div>
  </div>
  <div class="panel">
   <div class="tabs" id="tabs"></div>
@@ -195,6 +236,7 @@ h3:not(:first-child){margin-top:22px}
  <button class="big" data-close>Kapat</button>
 </div></div>
 
+<div class="game" id="game"><div class="ghead"><button class="tbtn" data-act="gclose" aria-label="Kapat">✕</button><h2 id="gTitle"></h2></div><div class="gbody" id="gBody"></div></div>
 <div id="flash"></div><div id="toast"></div>
 
 <script>
@@ -211,7 +253,10 @@ function shade(h,k){h=h.replace('#','');if(h.length===3)h=h.split('').map(x=>x+x
  const n=parseInt(h,16);let r=n>>16,g=n>>8&255,b=n&255;
  if(k<=1){r*=k;g*=k;b*=k}else{const t=Math.min(1,k-1);r+=(255-r)*t;g+=(255-g)*t;b+=(255-b)*t}
  return '#'+[r,g,b].map(v=>Math.round(v).toString(16).padStart(2,'0')).join('')}
-function heart(cx,cy,s,f,x=''){cx=+cx;cy=+cy;return `<path d="M${cx} ${cy+s*.9} C${cx-s*1.6} ${cy-s*.2},${cx-s*.6} ${cy-s*1.3},${cx} ${cy-s*.4} C${cx+s*.6} ${cy-s*1.3},${cx+s*1.6} ${cy-s*.2},${cx} ${cy+s*.9}Z" fill="${f}" stroke="${OL}" stroke-width="2.5" stroke-linejoin="round" ${x}/>`}
+const hd=(cx,cy,s)=>{cx=+cx;cy=+cy;return `M${cx} ${cy+s*.9} C${cx-s*1.6} ${cy-s*.2},${cx-s*.6} ${cy-s*1.3},${cx} ${cy-s*.4} C${cx+s*.6} ${cy-s*1.3},${cx+s*1.6} ${cy-s*.2},${cx} ${cy+s*.9}Z`};
+function flower(cx,cy,c){cx=+cx;cy=+cy;let o='';for(let i=0;i<5;i++){const a=i*1.2566-1.57;o+=`<circle cx="${(cx+5*Math.cos(a)).toFixed(1)}" cy="${(cy+5*Math.sin(a)).toFixed(1)}" r="4.3" fill="${c}" stroke="${OL}" stroke-width="1.6"/>`}
+ return o+`<circle cx="${cx}" cy="${cy}" r="3" fill="#ffd23f" stroke="${OL}" stroke-width="1.4"/>`}
+function heart(cx,cy,s,f,x=''){cx=+cx;cy=+cy;return `<path d="${hd(cx,cy,s)}" fill="${f}" stroke="${OL}" stroke-width="2.5" stroke-linejoin="round" ${x}/>`}
 function star(cx,cy,r,f,st=true){cx=+cx;cy=+cy;r=+r;const p=[];for(let i=0;i<10;i++){const a=-Math.PI/2+i*Math.PI/5,rr=i%2?r*.45:r;p.push((cx+rr*Math.cos(a)).toFixed(1)+','+(cy+rr*Math.sin(a)).toFixed(1))}
  return `<polygon points="${p.join(' ')}" fill="${f}" ${st?`stroke="${OL}" stroke-width="2" stroke-linejoin="round"`:''}/>`}
 const q=(a,b,c,t)=>(1-t)*(1-t)*a+2*t*(1-t)*b+t*t*c;
@@ -220,7 +265,21 @@ const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'
 
 /* =====================  renkler  ===================== */
 const SKIN=['#ffe3d1','#f6c9a8','#e8b08c','#c98b63','#9a6243','#6b432e'];
-const HAIRC=['#3b2416','#7a4a2a','#c47a3a','#e8c26a','#f6e7a8','#d9534f','#ff8fc8','#9b7bff','#4fc3f7','#2b2b2b'];
+const HAIRC=['#3b2416','#7a4a2a','#c47a3a','#e8c26a','#f6e7a8','#d9534f','#ff8fc8','#9b7bff','#4fc3f7','#2b2b2b','g:pembe','g:okyanus','g:gokkusagi'];
+const GRAD={'g:pembe':['#ff8fc8','#c78bff'],'g:okyanus':['#7ec8ff','#7be0b4'],'g:gokkusagi':['#ff6b6b','#ffa94d','#ffe066','#7be0b4','#7ec8ff','#c78bff']};
+const hb=c=>c.startsWith('g:')?GRAD[c][0]:c;
+const bgOf=c=>c.startsWith('g:')?`linear-gradient(135deg,${GRAD[c].join(',')})`:c;
+const swLock=(a,c)=>a==='hc'&&c==='g:gokkusagi'&&stars()<14;
+const PATS={duz:'Düz',kalp:'Kalpli',yildiz:'Yıldızlı',cicek:'Çiçekli',puan:'Puantiye',cizgi:'Çizgili',ekose:'Ekose'};
+function patTile(k,c){const m=c.toLowerCase()==='#ffffff'?'#ff9ccf':(['#ffe066','#7be0b4','#ff9ccf','#7ec8ff'].includes(c)?'#ffffff':shade(c,1.55));
+ switch(k){case 'kalp':return `<path d="${hd(12,12,4.5)}" fill="${m}"/>`;case 'yildiz':return star(12,12,5.5,m,false);
+  case 'cicek':return [0,1,2,3,4].map(i=>{const a=i*1.2566-1.57;return `<circle cx="${(12+4*Math.cos(a)).toFixed(1)}" cy="${(12+4*Math.sin(a)).toFixed(1)}" r="2.7" fill="${m}"/>`}).join('')+`<circle cx="12" cy="12" r="2" fill="#ffd23f"/>`;
+  case 'puan':return `<circle cx="6" cy="6" r="3" fill="${m}"/><circle cx="18" cy="18" r="3" fill="${m}"/>`;
+  case 'cizgi':return `<rect width="24" height="7" fill="${m}"/>`;
+  case 'ekose':return `<rect width="24" height="6" fill="${m}" opacity=".6"/><rect width="6" height="24" fill="${m}" opacity=".6"/><rect x="15" width="2" height="24" fill="${shade(c,.7)}" opacity=".5"/>`;
+  default:return ''}}
+const patDef=(id,k,c)=>`<pattern id="${id}" patternUnits="userSpaceOnUse" width="24" height="24"><rect width="24" height="24" fill="${c}"/>${patTile(k,c)}</pattern>`;
+const pat=(str,s,slot)=>s.pat&&s.pat[slot]&&s.pat[slot]!=='duz'?str.split(`fill="${s.col[slot]}"`).join(`fill="url(#pat-${slot})"`):str;
 const CLOTHC=['#ff5fa2','#ff9ccf','#c78bff','#7ec8ff','#7be0b4','#ffe066','#ff8a5c','#e8406a','#ffffff','#3b3b58'];
 const LIPC=['yok','#e8406a','#ff7aa8','#c2185b','#ff8a5c','#9b4dca'];
 const SHADC=['yok','#c78bff','#7ec8ff','#ff9ccf','#7be0b4','#ffd23f'];
@@ -235,6 +294,7 @@ const ARMR="M180 184 Q196 188 200 230 L204 318 Q204 332 194 332 Q185 332 185 318
 
 /* =====================  saçlar  ===================== */
 const CAP="M100 110 Q98 52 150 52 Q202 52 200 110 L198 150 L102 150 Z";
+const MIDF="M102 112 Q100 56 150 56 Q200 56 198 112 Q186 74 152 68 L150 80 L148 68 Q114 74 102 112 Z";
 const HAIR={
  uzun:{n:'Uzun',back:c=>P("M100 100 Q100 48 150 50 Q200 48 200 100 L206 250 Q180 262 150 258 Q120 262 94 250 Z",c)+L("M120 200 L118 245 M180 200 L182 245",shade(c,.8)),
   front:c=>P("M102 108 Q100 56 150 54 Q200 56 198 108 Q186 84 160 80 Q150 95 128 92 Q112 92 102 108 Z",c)+L("M130 66 Q150 60 170 66",shade(c,1.35),4)},
@@ -247,10 +307,19 @@ const HAIR={
  kisa:{n:'Kısa Küt',back:c=>P("M96 100 Q96 48 150 48 Q204 48 204 100 L206 164 Q178 172 150 170 Q122 172 94 164 Z",c),
   front:c=>P("M102 108 Q100 54 150 54 Q200 54 198 108 Q176 90 150 92 Q124 90 102 108 Z",c)+L("M128 64 Q150 58 172 64",shade(c,1.35),4)},
  orgu:{n:'Örgülü',back:c=>{let o=P(CAP,c);for(const x of [110,190]){for(let y=158;y<=278;y+=20)o+=E(x,y,13,12,c);o+=C(x,292,6,'#ff5fa2')+P(`M${x-6} 296 L${x} 318 L${x+6} 296 Z`,c)}return o},
-  front:c=>P("M102 112 Q100 56 150 56 Q200 56 198 112 Q186 74 152 68 L150 80 L148 68 Q114 74 102 112 Z",c)}
+  front:c=>P(MIDF,c)},
+ dalgali:{n:'Dalgalı',back:c=>P("M100 100 Q100 48 150 50 Q200 48 200 100 Q214 136 200 168 Q216 206 204 248 Q178 266 150 260 Q122 266 96 248 Q84 206 100 168 Q86 136 100 100 Z",c)+L("M110 150 Q102 180 112 210 M190 150 Q198 180 188 210",shade(c,.8)),
+  front:c=>P("M102 110 Q100 54 150 54 Q200 56 198 110 Q190 80 168 74 Q140 70 120 86 Q108 96 102 110 Z",c)+L("M134 64 Q156 58 176 66",shade(c,1.35),4)},
+ ikitopuz:{n:'İki Topuz',back:c=>C(110,58,21,c)+C(190,58,21,c)+L("M100 52 Q110 44 120 52 M180 52 Q190 44 200 52",shade(c,.8))+P(CAP,c),
+  front:c=>P(MIDF,c)+C(124,64,5,'#ff5fa2')+C(176,64,5,'#ff5fa2')},
+ yanorgu:{n:'Yan Örgü',back:c=>P(CAP,c),front:c=>{let o=P("M102 112 Q100 56 150 56 Q200 56 198 112 Q186 72 140 74 Q114 80 102 112 Z",c);
+  for(let i=0;i<7;i++)o+=E(192-i*2,150+i*19,12,11,c);return o+C(180,284,6,'#ff5fa2')+P("M174 288 L180 312 L186 288 Z",c)}}
 };
 
 /* =====================  kıyafetler  ===================== */
+const TSHIRT="M116 180 Q150 170 184 180 Q188 210 186 236 Q182 270 182 304 L118 304 Q118 270 114 236 Q112 210 116 180 Z";
+const TS_L="M120 182 Q102 188 98 222 L116 228 L120 210 Z",TS_R="M180 182 Q198 188 202 222 L184 228 L180 210 Z";
+const KZ_L="M120 182 Q100 188 96 232 L94 314 L117 314 L118 244 Q120 222 126 206 Z",KZ_R="M180 182 Q200 188 204 232 L206 314 L183 314 L182 244 Q180 222 174 206 Z";
 const DRESS={
  yok:{n:'Yok'},
  prenses:{n:'Prenses',f:c=>{const l=shade(c,1.35);let r='';for(let i=0;i<=10;i++){const t=i/10;r+=C(q(66,150,234,t).toFixed(1),q(438,474,438,t).toFixed(1),11,l)}
@@ -265,6 +334,13 @@ const DRESS={
  gece:{n:'Yıldızlı',f:c=>({m:P("M120 180 Q150 172 180 180 L184 270 Q210 420 222 540 Q150 558 78 540 Q90 420 116 270 Z",c)
    +[[136,320,8],[170,360,7],[118,430,8],[180,450,9],[148,500,8],[104,510,6],[196,512,6],[160,410,6]].map(a=>star(a[0],a[1],a[2],'#ffe066')).join('')
    +P("M116 262 Q150 274 184 262 L186 278 Q150 290 114 278 Z",'#ffe066'),s:''})},
+ parti:{n:'Parti',f:c=>{const l=shade(c,1.4);return {m:P("M118 256 Q80 322 78 358 Q150 380 222 358 Q220 322 182 256 Z",l)+P("M120 254 Q90 312 88 344 Q150 364 212 344 Q210 312 180 254 Z",c)
+  +P("M120 180 Q150 172 180 180 L180 260 Q150 266 120 260 Z",c)+heart(150,256,9,'#ffe066')+star(112,318,5,'#fff',false)+star(188,326,5,'#fff',false)+star(150,346,4,'#fff',false),s:L("M126 182 L124 172 M174 182 L176 172",c,5)}}},
+ tulum:{n:'Tulum',f:c=>({m:P("M116 180 Q150 172 184 180 Q188 220 184 300 L182 534 L154 534 L150 330 L146 534 L118 534 L116 300 Q112 220 116 180 Z",c)
+  +P("M116 270 Q150 278 184 270 L184 284 Q150 292 116 284 Z",shade(c,.75))+C(150,281,6,'#ffd23f')+L("M150 200 L150 262",shade(c,.8),2.5),s:P(TS_L,c)+P(TS_R,c)})},
+ kaban:{n:'Kışlık Mont',f:c=>{let fur='';for(let x=98;x<=202;x+=13)fur+=C(x,421,8,'#fff');
+  return {m:P("M114 180 Q150 170 186 180 Q202 240 204 420 Q150 430 96 420 Q98 240 114 180 Z",c)+L("M150 186 L150 420",shade(c,.75),3)+[220,260,300,340].map(y=>C(158,y,4,'#ffd23f')).join('')+fur
+   +[[126,182],[138,176],[150,174],[162,176],[174,182]].map(a=>C(a[0],a[1],9,'#fff')).join(''),s:P(KZ_L,c)+P(KZ_R,c)+E(105,314,13,7,'#fff')+E(195,314,13,7,'#fff')}}},
  gokkusagi:{n:'Gökkuşağı',lock:2,f:c=>{const cols=['#ff6b6b','#ffa94d','#ffe066','#7be0b4','#7ec8ff','#c78bff'];let o='';
   for(let i=5;i>=0;i--)o+=P(`M${120-i*5} ${256+i*14} Q150 ${248+i*14} ${180+i*5} ${256+i*14} L${200+i*8} ${300+i*18} Q150 ${318+i*18} ${100-i*8} ${300+i*18} Z`,cols[i]);
   return {m:o+P("M118 178 Q150 170 182 178 L180 262 Q150 268 120 262 Z",c)+star(150,214,12,'#fff'),s:C(114,190,14,'#ffe066')+C(186,190,14,'#7ec8ff')}}}
@@ -275,6 +351,10 @@ const TOPS={
  crop:{n:'Crop',f:c=>({m:P("M116 180 Q150 170 184 180 Q188 210 186 236 L184 254 Q150 260 116 254 L114 236 Q112 210 116 180 Z",c)+star(150,218,13,shade(c,1.45)),s:''})},
  kazak:{n:'Kazak',f:c=>{const l=shade(c,1.4);return {m:P("M116 180 Q150 170 184 180 Q188 210 186 236 Q182 270 182 304 L118 304 Q118 270 114 236 Q112 210 116 180 Z",c)+L("M118 222 L182 222 M118 252 L182 252 M120 282 L180 282",l,7),
   s:P("M120 182 Q100 188 96 232 L94 314 L117 314 L118 244 Q120 222 126 206 Z",c)+P("M180 182 Q200 188 204 232 L206 314 L183 314 L182 244 Q180 222 174 206 Z",c)+L("M97 262 L117 262 M183 262 L204 262",l,6)}}},
+ gomlek:{n:'Gömlek',f:c=>({m:P(TSHIRT,c)+P("M136 176 L150 196 L142 204 L128 182 Z",'#fff')+P("M164 176 L150 196 L158 204 L172 182 Z",'#fff')
+  +[214,240,266,290].map(y=>`<circle cx="150" cy="${y}" r="3" fill="${shade(c,.7)}"/>`).join(''),s:P(TS_L,c)+P(TS_R,c)})},
+ ceket:{n:'Ceket',f:c=>({m:P(TSHIRT,'#fff')+heart(150,240,10,'#ff5fa2')+P("M116 180 Q130 174 140 176 L134 250 L140 304 L118 304 Q118 270 114 236 Q112 210 116 180 Z",c)
+  +P("M184 180 Q170 174 160 176 L166 250 L160 304 L182 304 Q182 270 186 236 Q188 210 184 180 Z",c),s:P(KZ_L,c)+P(KZ_R,c)})},
  askili:{n:'Askılı',f:c=>({m:L("M130 188 L126 174 M170 188 L174 174",c,5)+P("M124 186 Q150 194 176 186 Q184 220 182 250 Q180 276 182 304 L118 304 Q120 276 118 250 Q116 220 124 186 Z",c)
   +[[138,220],[162,236],[142,262],[164,284],[130,290]].map(a=>`<circle cx="${a[0]}" cy="${a[1]}" r="4" fill="#fff"/>`).join(''),s:''})}
 };
@@ -282,6 +362,8 @@ const BOTTOMS={
  etek:{n:'Etek',f:c=>P("M120 288 L180 288 L202 384 Q150 396 98 384 Z",c)+L("M134 292 L124 388 M150 292 L150 392 M166 292 L176 388",shade(c,.8))},
  pantolon:{n:'Pantolon',f:c=>P("M120 290 L180 290 L180 534 L154 534 L150 330 L146 534 L120 534 Z",c)+L("M150 292 L150 326",shade(c,.75))},
  sort:{n:'Şort',f:c=>P("M120 288 L180 288 L182 352 L154 352 L150 318 L146 352 L118 352 Z",c)+L("M124 340 L144 340 M156 340 L178 340",shade(c,1.4),4)},
+ maxi:{n:'Uzun Etek',f:c=>P("M120 288 L180 288 L210 522 Q150 536 90 522 Z",c)+L("M136 292 L120 526 M150 292 L150 530 M164 292 L180 526",shade(c,.82))},
+ kot:{n:'Kot',f:c=>P("M120 290 L180 290 L184 534 L154 534 L150 330 L146 534 L116 534 Z",c)+L("M126 300 Q132 312 142 304 M174 300 Q168 312 158 304 M128 400 L130 520 M172 400 L170 520",'#ffd23f',2)},
  tutu:{n:'Tütü',f:c=>P("M118 292 Q150 286 182 292 L216 342 Q150 360 84 342 Z",shade(c,1.4))+P("M120 290 Q150 284 180 290 L204 328 Q150 342 96 328 Z",c)+P("M120 284 L180 284 L180 296 L120 296 Z",shade(c,.8))}
 };
 const SHOES={
@@ -289,7 +371,9 @@ const SHOES={
  babet:{n:'Babet',f:c=>E(136,551,15,8,c)+C(136,544,4,'#fff')},
  topuklu:{n:'Topuklu',f:c=>P("M121 548 Q124 538 140 540 Q152 542 152 551 Q150 557 140 557 L124 557 Z",c)+P("M121 552 L120 566 L126 566 L127 556 Z",shade(c,.7))},
  spor:{n:'Spor',f:c=>P("M121 544 Q121 537 132 537 L144 537 Q153 539 153 550 L153 558 L121 558 Z",'#fff')+L("M126 546 L148 546",c,5)+L("M122 556 L152 556",shade(c,.75),3)},
- bot:{n:'Bot',f:c=>P("M124 472 L150 472 L150 557 L119 557 Q117 547 124 540 Z",c)+P("M122 466 L152 466 L152 482 L122 482 Z",shade(c,1.4))}
+ bot:{n:'Bot',f:c=>P("M124 472 L150 472 L150 557 L119 557 Q117 547 124 540 Z",c)+P("M122 466 L152 466 L152 482 L122 482 Z",shade(c,1.4))},
+ sandalet:{n:'Sandalet',f:c=>P("M121 554 Q122 548 136 548 Q152 548 152 554 L152 559 L121 559 Z",shade(c,.75))+L("M126 548 L146 544 M128 544 L134 538",c,4)},
+ paten:{n:'Paten',lock:12,f:c=>P("M123 500 L150 500 L152 552 L121 552 Q118 540 123 532 Z",c)+P("M119 550 L154 550 L154 558 L119 558 Z",'#fff')+C(126,566,5.5,'#ffe066')+C(147,566,5.5,'#ffe066')+L("M126 512 L146 512 M126 524 L146 524",'#fff',2.5)}
 };
 const ACC={
  tac:{n:'Taç',f:()=>P("M122 70 L126 42 L138 58 L150 34 L162 58 L174 42 L178 70 Q150 64 122 70 Z",'#ffd23f')+C(150,40,4,'#ff5fa2')+C(126,46,3.5,'#7ec8ff')+C(174,46,3.5,'#7ec8ff')+C(150,62,4,'#c78bff')},
@@ -298,15 +382,21 @@ const ACC={
  kolye:{n:'İnci Kolye',f:()=>{let o='';for(let i=0;i<=8;i++){const x=134+i*4,y=181+10*Math.sin(Math.PI*i/8);o+=`<circle cx="${x}" cy="${y.toFixed(1)}" r="3.3" fill="#fff" stroke="${OL}" stroke-width="1.5"/>`}return o+heart(150,196,6,'#ff5fa2')}},
  kupe:{n:'Küpe',f:()=>C(104,126,4,'#ffd23f')+star(104,138,7,'#ffd23f')+C(196,126,4,'#ffd23f')+star(196,138,7,'#ffd23f')},
  canta:{n:'Çanta',f:()=>L("M184 332 Q196 308 208 332",OL,5)+L("M184 332 Q196 308 208 332",'#ff5fa2',2.5)+P("M178 330 L214 330 L218 362 L174 362 Z",'#ff9ccf')+heart(196,344,6,'#ffd23f')},
+ sapka:{n:'Hasır Şapka',f:()=>E(150,64,74,16,'#ffe2a0')+P("M112 64 Q112 22 150 20 Q188 22 188 64 Z",'#ffe2a0')+P("M112 52 Q150 44 188 52 L188 62 Q150 56 112 62 Z",'#ff5fa2')+flower(178,54,'#fff')},
+ cicektaci:{n:'Çiçek Tacı',f:()=>{let o='';for(let i=0;i<7;i++){const a=Math.PI*(1-i/6);o+=flower((150+50*Math.cos(a)).toFixed(1),(96-44*Math.sin(a)).toFixed(1),['#ff9ccf','#fff','#c78bff','#ffe066'][i%4])}return o}},
+ kedikulak:{n:'Kedi Kulağı',f:()=>L("M104 92 Q150 40 196 92",OL,8)+L("M104 92 Q150 40 196 92",'#ff9ccf',4)+P("M112 70 L108 40 L134 58 Z",'#ff9ccf')+P("M188 70 L192 40 L166 58 Z",'#ff9ccf')
+  +`<path d="M114 64 L112 48 L126 58 Z" fill="#fff" opacity=".8"/><path d="M186 64 L188 48 L174 58 Z" fill="#fff" opacity=".8"/>`},
+ kulaklik:{n:'Kulaklık',f:()=>L("M102 112 Q100 40 150 40 Q200 40 198 112",OL,10)+L("M102 112 Q100 40 150 40 Q200 40 198 112",'#c78bff',6)
+  +`<rect x="92" y="98" width="20" height="32" rx="9" fill="#ff5fa2" stroke="${OL}" stroke-width="3"/><rect x="188" y="98" width="20" height="32" rx="9" fill="#ff5fa2" stroke="${OL}" stroke-width="3"/>`+heart(102,114,4,'#fff')+heart(198,114,4,'#fff')},
  asa:{n:'Sihirli Asa',lock:8,f:()=>L("M104 328 L76 268",OL,9)+L("M104 328 L76 268",'#c78bff',5)+star(74,262,16,'#ffe066')+star(52,244,5,'#fff')+star(96,240,4,'#fff')+star(60,286,4,'#fff')}
 };
 
 /* =====================  yüz  ===================== */
-function face(s){const m=s.mk,hd=shade(s.hair.c==='#f6e7a8'||s.hair.c==='#e8c26a'?'#c49a4a':s.hair.c,.85);let o='';
+function face(s){const m=s.mk,h0=hb(s.hair.c),bc=shade(h0==='#f6e7a8'||h0==='#e8c26a'||h0==='#ffe066'?'#c49a4a':h0,.85);let o='';
  if(m.shadow!=='yok')o+=`<ellipse cx="133" cy="108" rx="13" ry="8" fill="${m.shadow}" opacity=".75"/><ellipse cx="167" cy="108" rx="13" ry="8" fill="${m.shadow}" opacity=".75"/>`;
  for(const [x,d] of [[133,-1],[167,1]]){
   o+=E(x,116,10,12,'#fff')+`<circle cx="${x}" cy="118" r="7" fill="${m.eye}"/><circle cx="${x}" cy="118" r="3.5" fill="#1d1020"/><circle cx="${x+2.5}" cy="114" r="2.4" fill="#fff"/>`;
-  o+=L(`M${x+9*d} 109 l${5*d} -4 M${x+5*d} 105.5 l${3*d} -5`,OL,2.5)+L(`M${x-10} 98 Q${x} 91 ${x+10} 98`,hd,3.5);
+  o+=L(`M${x+9*d} 109 l${5*d} -4 M${x+5*d} 105.5 l${3*d} -5`,OL,2.5)+L(`M${x-10} 98 Q${x} 91 ${x+10} 98`,bc,3.5);
  }
  o+=L("M148 127 Q150 130 152 127",shade(s.skin,.7),2.5);
  if(m.blush)o+=`<ellipse cx="119" cy="134" rx="10" ry="6" fill="#ff6fa5" opacity=".45"/><ellipse cx="181" cy="134" rx="10" ry="6" fill="#ff6fa5" opacity=".45"/>`;
@@ -315,15 +405,16 @@ function face(s){const m=s.mk,hd=shade(s.hair.c==='#f6e7a8'||s.hair.c==='#e8c26a
  return o}
 
 /* =====================  bebek  ===================== */
-function doll(s){const k=s.skin,H=HAIR[s.hair.k],hc=s.hair.c;let o=H.back(hc);
+function doll(s){const k=s.skin,H=HAIR[s.hair.k],hc=hb(s.hair.c),hg=s.hair.c.startsWith('g:');
+ const hf=str=>hg?str.split(`fill="${hc}"`).join('fill="url(#hairG)"'):str;let o=hf(H.back(hc));
  o+=P(LEGL,k)+P(LEGR,k)+E(136,551,12,7,k)+E(164,551,12,7,k);
  o+=`<rect x="140" y="146" width="20" height="36" rx="6" fill="${k}" stroke="${OL}" stroke-width="3"/>`+P(TORSO,k);
  if(s.shoes!=='yok'){const f=SHOES[s.shoes].f(s.col.shoes);o+=f+`<g transform="translate(28 0)">${f}</g>`}
  let sl='';
- if(s.dress!=='yok'){const d=DRESS[s.dress].f(s.col.dress);o+=d.m;sl=d.s}
- else{o+=BOTTOMS[s.bottom].f(s.col.bottom);const t=TOPS[s.top].f(s.col.top);o+=t.m;sl=t.s}
+ if(s.dress!=='yok'){const d=DRESS[s.dress].f(s.col.dress);o+=pat(d.m,s,'dress');sl=pat(d.s,s,'dress')}
+ else{o+=pat(BOTTOMS[s.bottom].f(s.col.bottom),s,'bottom');const t=TOPS[s.top].f(s.col.top);o+=pat(t.m,s,'top');sl=pat(t.s,s,'top')}
  o+=P(ARML,k)+P(ARMR,k)+sl;
- o+=C(104,114,8,k)+C(196,114,8,k)+E(150,108,46,50,k)+face(s)+H.front(hc);
+ o+=C(104,114,8,k)+C(196,114,8,k)+E(150,108,46,50,k)+face(s)+hf(H.front(hc));
  for(const a of s.acc)if(ACC[a])o+=ACC[a].f();
  return o}
 
@@ -398,15 +489,20 @@ const TASKS=[
  {id:'plaj',i:'🏖️',t:'Plajda fotoğraf çek',ok:(s,e)=>e==='photo'&&s.bg==='plaj'},
  {id:'spor',i:'👟',t:'Şort ve spor ayakkabı giydir',ok:s=>s.dress==='yok'&&s.bottom==='sort'&&s.shoes==='spor'},
  {id:'kivir',i:'🌀',t:'Kıvırcık saç dene',ok:s=>s.hair.k==='kivircik'},
- {id:'sahne',i:'🎤',t:'Sahnede fotoğraf çek',ok:(s,e)=>e==='photo'&&s.bg==='sahne'}
+ {id:'sahne',i:'🎤',t:'Sahnede fotoğraf çek',ok:(s,e)=>e==='photo'&&s.bg==='sahne'},
+ {id:'desen',i:'🌸',t:'Desenli bir kıyafet giydir',ok:s=>s.dress!=='yok'?s.pat.dress!=='duz':(s.pat.top!=='duz'||s.pat.bottom!=='duz')},
+ {id:'defile',i:'🏆',t:'Defilede 24+ puan al',ok:(s,e)=>e==='defile24'},
+ {id:'tirnak',i:'💅',t:'5 tırnağı da boya',ok:(s,e)=>e==='tirnak'},
+ {id:'pasta',i:'🎂',t:'Pasta süsle, mumları üfle',ok:(s,e)=>e==='pasta'}
 ];
-const UNLOCKS=[[2,'🌈 Gökkuşağı Elbise'],[4,'🦄 Unicorn Dost'],[6,'🪐 Uzay'],[8,'🪄 Sihirli Asa'],[10,'🏰 Şato']];
+const UNLOCKS=[[2,'🌈 Gökkuşağı Elbise'],[4,'🦄 Unicorn Dost'],[6,'🪐 Uzay'],[8,'🪄 Sihirli Asa'],[10,'🏰 Şato'],[12,'🛼 Paten'],[14,'🌈 Gökkuşağı Saç']];
 
 /* =====================  durum  ===================== */
 const KEY='moda-dunyasi-v1';
 const DEF={name:'',skin:'#f6c9a8',hair:{k:'uzun',c:'#e8c26a'},dress:'prenses',top:'tisort',bottom:'etek',shoes:'babet',
  col:{dress:'#c78bff',top:'#7ec8ff',bottom:'#ff9ccf',shoes:'#ff5fa2'},acc:['fiyonk'],mk:{lip:'yok',shadow:'yok',eye:'#5b3a29',blush:false,sim:false},
- pet:'yok',bg:'oda',stickers:[],done:[],gal:[]};
+ pet:'yok',bg:'oda',stickers:[],done:[],gal:[],pat:{dress:'duz',top:'duz',bottom:'duz'},
+ nails:[null,null,null,null,null],cake:{base:'#ffd6a5',cream:'#ff9ccf',tops:[],lit:true}};
 let S;
 try{S=Object.assign(structuredClone(DEF),JSON.parse(localStorage.getItem(KEY)||'{}'))}catch(e){S=structuredClone(DEF)}
 if(!Array.isArray(S.gal))S.gal=[];
@@ -426,7 +522,10 @@ document.addEventListener('pointerdown',audio,{capture:true});
 
 /* =====================  çizim  ===================== */
 const stageEl=$('#stage');
-function renderStage(anim){
+function renderDefs(){let d='';for(const sl of ['dress','top','bottom'])if(S.pat[sl]!=='duz')d+=patDef('pat-'+sl,S.pat[sl],S.col[sl]);
+ if(S.hair.c.startsWith('g:')){const g=GRAD[S.hair.c];d+=`<linearGradient id="hairG" gradientUnits="userSpaceOnUse" x1="0" y1="40" x2="0" y2="300">${g.map((c,i)=>`<stop offset="${(i/(g.length-1)).toFixed(2)}" stop-color="${c}"/>`).join('')}</linearGradient>`}
+ $('#dyn').innerHTML=d}
+function renderStage(anim){renderDefs();
  $('#bg').innerHTML=BGS[S.bg].d();
  $('#dollInner').innerHTML=doll(S);
  $('#petInner').innerHTML=S.pet!=='yok'?PETS[S.pet].f():'';
@@ -440,7 +539,7 @@ function renderStickers(){$('#stkLayer').innerHTML=S.stickers.map((s,i)=>`<text 
 
 /* =====================  panel  ===================== */
 const TABS=[['sac','💇‍♀️','Saç'],['elbise','👗','Elbise'],['ust','👚','Üst'],['alt','🩳','Alt'],['ayakkabi','👠','Ayakkabı'],['taki','👑','Takı'],['makyaj','💄','Makyaj'],
- ['ten','🎨','Ten'],['dost','🐶','Dost'],['yer','🏰','Yer'],['sticker','✨','Sticker'],['gorev','⭐','Görev']];
+ ['ten','🎨','Ten'],['dost','🐶','Dost'],['yer','🏰','Yer'],['sticker','✨','Sticker'],['oyun','🎮','Oyunlar'],['gorev','⭐','Görev']];
 let tab='elbise';
 $('#tabs').innerHTML=TABS.map((t,i)=>`<button class="tab" data-act="tab" data-v="${t[0]}" style="--r:${(i%3-1)*2}deg"><i>${t[1]}</i><span>${t[2]}</span></button>`).join('');
 const rot=i=>`--r:${[-2,1.5,-1,2,-1.5,1][i%6]}deg`;
@@ -451,18 +550,19 @@ function cards(obj,act,cur,vb,mk){return '<div class="grid">'+Object.entries(obj
  const body=k==='yok'?`<div class="none">🚫</div>`:mk(k);
  return `<button class="card ${sel?'sel':''} ${lk?'lock':''}" style="${rot(i)}" data-act="${act}" data-v="${k}">${body}<span>${it.n}</span>${lk?`<b class="lk">🔒 ⭐${it.lock}</b>`:''}</button>`}).join('')+'</div>'}
 function swatches(list,act,cur){return '<div class="sws">'+list.map(c=>c==='yok'?`<button class="sw x ${cur==='yok'?'sel':''}" data-act="${act}" data-v="yok">✕</button>`
- :`<button class="sw ${cur===c?'sel':''}" style="--c:${c}" data-act="${act}" data-v="${c}"></button>`).join('')+'</div>'}
+ :`<button class="sw ${cur===c?'sel':''} ${swLock(act,c)?'lock':''}" style="--c:${bgOf(c)}" data-act="${act}" data-v="${c}">${swLock(act,c)?'🔒':''}</button>`).join('')+'</div>'}
+function patRow(slot){return `<h3>🌸 Desen</h3><div class="sws">`+Object.entries(PATS).map(([k,n])=>`<button class="sw pat ${S.pat[slot]===k?'sel':''}" data-act="pat" data-v="${slot}:${k}" aria-label="${n}"><svg viewBox="0 0 48 48">${k==='duz'?'':`<defs>${patDef('pp-'+slot+'-'+k,k,S.col[slot])}</defs>`}<circle cx="24" cy="24" r="24" fill="${k==='duz'?S.col[slot]:`url(#pp-${slot}-${k})`}"/></svg></button>`).join('')+'</div>'}
 
 function renderPanel(){
  document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',b.dataset.v===tab));
  const el=$('#content'),st=el.scrollTop;let h='';
  switch(tab){
   case 'sac':h=`<h3>💇‍♀️ Saç Modeli</h3>`+cards(HAIR,'hair',S.hair.k,'',k=>mini('60 12 180 250',withS(c=>{c.hair.k=k;c.acc=[]})))+`<h3>🎨 Saç Rengi</h3>`+swatches(HAIRC,'hc',S.hair.c);break;
-  case 'elbise':h=`<h3>👗 Elbiseler</h3>`+cards(DRESS,'dress',S.dress,'',k=>mini('40 160 220 410',withS(c=>{c.dress=k;c.acc=[]})))+`<h3>🎨 Elbise Rengi</h3>`+swatches(CLOTHC,'dc',S.col.dress);break;
-  case 'ust':h=`<h3>👚 Üstler</h3>`+cards(TOPS,'top',S.dress==='yok'?S.top:'','',k=>mini('80 160 140 180',withS(c=>{c.dress='yok';c.top=k;c.acc=[]})))+`<h3>🎨 Üst Rengi</h3>`+swatches(CLOTHC,'tc',S.col.top);break;
-  case 'alt':h=`<h3>🩳 Altlar</h3>`+cards(BOTTOMS,'bottom',S.dress==='yok'?S.bottom:'','',k=>mini('68 270 164 280',withS(c=>{c.dress='yok';c.bottom=k;c.acc=[]})))+`<h3>🎨 Alt Rengi</h3>`+swatches(CLOTHC,'bc',S.col.bottom);break;
+  case 'elbise':h=`<h3>👗 Elbiseler</h3>`+cards(DRESS,'dress',S.dress,'',k=>mini('40 160 220 410',withS(c=>{c.dress=k;c.acc=[]})))+`<h3>🎨 Elbise Rengi</h3>`+swatches(CLOTHC,'dc',S.col.dress)+patRow('dress');break;
+  case 'ust':h=`<h3>👚 Üstler</h3>`+cards(TOPS,'top',S.dress==='yok'?S.top:'','',k=>mini('80 160 140 180',withS(c=>{c.dress='yok';c.top=k;c.acc=[]})))+`<h3>🎨 Üst Rengi</h3>`+swatches(CLOTHC,'tc',S.col.top)+patRow('top');break;
+  case 'alt':h=`<h3>🩳 Altlar</h3>`+cards(BOTTOMS,'bottom',S.dress==='yok'?S.bottom:'','',k=>mini('68 270 164 280',withS(c=>{c.dress='yok';c.bottom=k;c.acc=[]})))+`<h3>🎨 Alt Rengi</h3>`+swatches(CLOTHC,'bc',S.col.bottom)+patRow('bottom');break;
   case 'ayakkabi':h=`<h3>👠 Ayakkabılar</h3>`+cards(SHOES,'shoes',S.shoes,'',k=>mini('104 452 94 120',withS(c=>{c.shoes=k;c.dress='yok';c.bottom='sort'})))+`<h3>🎨 Ayakkabı Rengi</h3>`+swatches(CLOTHC,'sc',S.col.shoes);break;
-  case 'taki':h=`<h3>👑 Takılar <small style="font-size:14px;opacity:.7">(istediğin kadar seç!)</small></h3>`+cards(ACC,'acc',S.acc,'',k=>mini(['canta','asa'].includes(k)?'40 200 200 180':k==='kolye'?'95 120 110 100':'75 25 150 150',withS(c=>{c.acc=[k]})));break;
+  case 'taki':h=`<h3>👑 Takılar <small style="font-size:14px;opacity:.7">(istediğin kadar seç!)</small></h3>`+cards(ACC,'acc',S.acc,'',k=>mini(['canta','asa'].includes(k)?'40 200 200 180':k==='kolye'?'95 120 110 100':k==='sapka'?'60 5 180 160':'75 25 150 150',withS(c=>{c.acc=[k]})));break;
   case 'makyaj':h=`<h3>💋 Ruj</h3>`+swatches(LIPC,'lip',S.mk.lip)+`<h3>👁️ Far</h3>`+swatches(SHADC,'shadow',S.mk.shadow)+`<h3>🔵 Göz Rengi</h3>`+swatches(EYEC,'eye',S.mk.eye)
    +`<h3>✨ Ekstralar</h3><div class="toggles"><button class="tog ${S.mk.blush?'sel':''}" data-act="blush">😊 Allık</button><button class="tog ${S.mk.sim?'sel':''}" data-act="sim">✨ Simli Yanak</button></div>`;break;
   case 'ten':h=`<h3>🎨 Ten Rengi</h3>`+swatches(SKIN,'skin',S.skin);break;
@@ -470,6 +570,10 @@ function renderPanel(){
   case 'yer':h=`<h3>🏰 Nerede Olalım?</h3>`+cards(BGS,'bg',S.bg,'',k=>`<svg viewBox="0 0 400 640" preserveAspectRatio="xMidYMid slice">${BGS[k].d()}</svg>`);break;
   case 'sticker':h=`<h3>✨ Sticker Yapıştır</h3><div class="hint">Dokun → sahneye yapışır. Parmağınla sürükle, 🗑️ çöpe atarak sil!</div><div class="emo">`
    +STICKERS.map((e,i)=>`<button style="${rot(i)}" data-act="stk" data-v="${e}">${e}</button>`).join('')+`</div><button class="big alt" data-act="clearstk">🧽 Hepsini Temizle</button>`;break;
+  case 'oyun':h=`<h3>🎮 Mini Oyunlar</h3><div class="gcards">
+   <button class="gcard" style="--r:-1deg" data-act="game" data-v="defile"><i>🎤</i><b>Defile Yarışması</b><span>Temaya göre giyin, jüri puan versin!</span></button>
+   <button class="gcard" style="--r:1deg" data-act="game" data-v="tirnak"><i>💅</i><b>Tırnak Salonu</b><span>Oje sür, kalp ve yıldız yapıştır!</span></button>
+   <button class="gcard" style="--r:-1deg" data-act="game" data-v="pasta"><i>🎂</i><b>Pasta Atölyesi</b><span>Pastanı süsle, mumları üfle!</span></button></div>`;break;
   case 'gorev':h=`<h3>⭐ Görevler (${stars()}/${TASKS.length})</h3>`+TASKS.map(t=>{const ok=S.done.includes(t.id);return `<div class="task ${ok?'ok':''}"><i>${t.i}</i>${t.t}<b>${ok?'⭐':'☆'}</b></div>`}).join('')
    +`<h3>🎁 Açılan Sürprizler</h3><div class="unl">`+UNLOCKS.map(u=>`<span class="${stars()>=u[0]?'ok':''}">${stars()>=u[0]?'✅':'🔒 ⭐'+u[0]} ${u[1]}</span>`).join('')+`</div>`
    +`<button class="big" data-act="gal">🖼️ Galerim</button><button class="big alt" data-act="rename">✏️ İsmi Değiştir</button>`;break;
@@ -489,6 +593,8 @@ function checkTasks(ev){const before=stars();let got=[];
   $('#starTxt').textContent=stars();renderPanel()},350)}
 const LOOK={dress:DRESS,top:TOPS,bottom:BOTTOMS,shoes:SHOES,acc:ACC,pet:PETS,bg:BGS,hair:HAIR};
 function act(a,v,btn){
+ if(gameAct(a,v,btn))return;
+ if(swLock(a,v)){SND.no();toast('🔒 Gökkuşağı saç için ⭐14 yıldız lazım! Görevlere bak 😉',2800);return}
  if(LOOK[a]&&locked(LOOK[a][v])){SND.no();btn&&(btn.classList.remove('shake'),void btn.offsetWidth,btn.classList.add('shake'));toast(`🔒 Bunu açmak için ⭐${LOOK[a][v].lock} yıldız lazım! Görevlere bak 😉`,2800);return}
  let anim=true;
  switch(a){
@@ -498,6 +604,7 @@ function act(a,v,btn){
   case 'top':S.top=v;S.dress='yok';break; case 'tc':S.col.top=v;S.dress='yok';break;
   case 'bottom':S.bottom=v;S.dress='yok';break; case 'bc':S.col.bottom=v;S.dress='yok';break;
   case 'shoes':S.shoes=v;break; case 'sc':S.col.shoes=v;if(S.shoes==='yok')S.shoes='babet';break;
+  case 'pat':{const [sl,k]=v.split(':');S.pat[sl]=k;if(sl==='dress'){if(S.dress==='yok')S.dress='prenses'}else S.dress='yok';break}
   case 'acc':S.acc=S.acc.includes(v)?S.acc.filter(x=>x!==v):[...S.acc,v];break;
   case 'lip':case 'shadow':case 'eye':S.mk[a]=v;break;
   case 'blush':case 'sim':S.mk[a]=!S.mk[a];break;
@@ -523,7 +630,8 @@ $('#dollInner').addEventListener('pointerdown',()=>{renderStage(true);tone(990,.
 $('#btnRand').onclick=()=>{const free=o=>Object.keys(o).filter(k=>!locked(o[k]));
  S.hair={k:rnd(free(HAIR)),c:rnd(HAIRC)};
  if(Math.random()<.5){S.dress=rnd(free(DRESS).filter(k=>k!=='yok'));S.col.dress=rnd(CLOTHC)}else{S.dress='yok';S.top=rnd(free(TOPS));S.bottom=rnd(free(BOTTOMS));S.col.top=rnd(CLOTHC);S.col.bottom=rnd(CLOTHC)}
- S.shoes=rnd(free(SHOES).filter(k=>k!=='yok'));S.col.shoes=rnd(CLOTHC);
+ S.pat={dress:Math.random()<.4?rnd(Object.keys(PATS)):'duz',top:Math.random()<.4?rnd(Object.keys(PATS)):'duz',bottom:Math.random()<.3?rnd(Object.keys(PATS)):'duz'};
+ S.hair.c=rnd(HAIRC.filter(c=>!swLock('hc',c)));S.shoes=rnd(free(SHOES).filter(k=>k!=='yok'));S.col.shoes=rnd(CLOTHC);
  S.acc=free(ACC).filter(()=>Math.random()<.35);S.mk={lip:rnd(LIPC),shadow:rnd(SHADC),eye:S.mk.eye,blush:Math.random()<.6,sim:Math.random()<.4};
  [600,800,1000,1200].forEach((f,i)=>tone(f,.08,'triangle',.12,i*.05));save();renderStage(true);renderPanel();checkTasks()};
 
@@ -568,6 +676,136 @@ $('#shareBtn').onclick=()=>curPng&&sharePic(curPng);
 function openGal(){const g=$('#galList');g.innerHTML=S.gal.length?S.gal.slice().reverse().map((u,i)=>`<img src="${u}" data-g="${S.gal.length-1-i}" style="${rot(i)}">`).join(''):'<p style="grid-column:1/-1">Henüz fotoğraf yok. 📸 butonuna bas!</p>';$('#mGal').classList.add('show');SND.tap()}
 $('#btnGal').onclick=openGal;
 $('#galList').addEventListener('click',e=>{const im=e.target.closest('img');if(!im)return;curPng=S.gal[+im.dataset.g];$('#photoImg').src=curPng;$('#mGal').classList.remove('show');$('#mPhoto').classList.add('show')});
+
+/* =====================  mini oyunlar  ===================== */
+const gEl=$('#game'),gBody=$('#gBody');
+function openGame(id){SND.tap();gEl.classList.add('show');G[id].open()}
+function closeGame(){gEl.classList.remove('show');gBody.innerHTML=''}
+function gPt(svg,e){const p=svg.createSVGPoint();p.x=e.clientX;p.y=e.clientY;return p.matrixTransform(svg.getScreenCTM().inverse())}
+const isPink=c=>['#ff5fa2','#ff9ccf','#e8406a'].includes(c);
+const mainCol=s=>s.dress!=='yok'?s.col.dress:s.col.top;
+
+/* --- defile --- */
+const THEMES=[
+ {id:'plaj',n:'Plaj Günü',e:'🏖️',ip:'Yazlık kıyafet, sandalet, şapka ya da gözlük!',tips:['🏖️ Plaj arka planı','👙 Yazlık kıyafet','🩴 Sandalet/babet','👒 Şapka ya da gözlük'],
+  chk:s=>[s.bg==='plaj',s.dress==='yazlik'||(s.dress==='yok'&&['sort','etek','tutu'].includes(s.bottom)),['sandalet','babet'].includes(s.shoes),s.acc.includes('sapka')||s.acc.includes('gozluk')]},
+ {id:'balo',n:'Prenses Balosu',e:'👑',ip:'Uzun kabarık elbise, taç, topuklu ayakkabı!',tips:['👗 Balo elbisesi','👑 Taç','👠 Topuklu','💄 Ruj ya da kolye'],
+  chk:s=>[['prenses','gece','gokkusagi'].includes(s.dress),s.acc.includes('tac')||s.acc.includes('cicektaci'),s.shoes==='topuklu',s.mk.lip!=='yok'||s.acc.includes('kolye')]},
+ {id:'spor',n:'Spor Günü',e:'⚽',ip:'Şort ya da pantolon, spor ayakkabı, toplu saç, park!',tips:['🩳 Şort/pantolon','👟 Spor ayakkabı ya da paten','💇‍♀️ Toplu saç','🌳 Park'],
+  chk:s=>[s.dress==='tulum'||(s.dress==='yok'&&['sort','pantolon','kot'].includes(s.bottom)),['spor','paten'].includes(s.shoes),['atkuyrugu','topuz','ikitopuz','orgu','yanorgu'].includes(s.hair.k),s.bg==='park']},
+ {id:'kis',n:'Kış Masalı',e:'❄️',ip:'Mont ya da kazak, bot, kulaklık ya da şapka!',tips:['🧥 Mont/kazak/ceket','👢 Bot','👖 Uzun alt','🎧 Kulaklık, şapka ya da kulak'],
+  chk:s=>[s.dress==='kaban'||(s.dress==='yok'&&['kazak','ceket'].includes(s.top)),s.shoes==='bot',s.dress==='kaban'||s.dress==='tulum'||(s.dress==='yok'&&['pantolon','kot','maxi'].includes(s.bottom)),s.acc.some(a=>['kulaklik','sapka','kedikulak'].includes(a))]},
+ {id:'pembe',n:'Pembiş Parti',e:'💖',ip:'Her şey pembe olsun! Pembe kıyafet, pembe saç...',tips:['💗 Pembe kıyafet','👠 Pembe ayakkabı','💇‍♀️ Pembe saç','💄 Ruj ve allık'],
+  chk:s=>[isPink(mainCol(s)),isPink(s.col.shoes)&&s.shoes!=='yok',s.hair.c==='#ff8fc8'||s.hair.c==='g:pembe',s.mk.lip!=='yok'&&s.mk.blush]},
+ {id:'yildiz',n:'Yıldız Gecesi',e:'🌟',ip:'Yıldızlı elbise ya da yıldız desen, simli yanak, sahne!',tips:['⭐ Yıldızlı kıyafet','✨ Simli yanak','🎤 Sahne ya da uzay','💎 Küpe ya da kolye'],
+  chk:s=>[s.dress==='gece'||(s.dress!=='yok'?s.pat.dress==='yildiz':(s.pat.top==='yildiz'||s.pat.bottom==='yildiz')),s.mk.sim,s.bg==='sahne'||s.bg==='uzay',s.acc.includes('kupe')||s.acc.includes('kolye')]}
+];
+let theme=null,lastTheme=null;
+function themeCard(){let t;do{t=rnd(THEMES)}while(THEMES.length>1&&t===lastTheme);lastTheme=t;$('#gTitle').textContent='🎤 Defile Yarışması';
+ gBody.innerHTML=`<div class="box" style="margin:auto"><p>Bugünün teması:</p><div class="themebig">${t.e}</div><h2>${t.n}</h2><p>💡 ${t.ip}</p>
+  <div class="tips">${t.tips.map(x=>`<span>${x}</span>`).join('')}</div>
+  <div class="row"><button class="big alt" data-act="dnew">🔄 Başka Tema</button><button class="big" data-act="dstart">👗 Hazırlan!</button></div></div>`}
+function showBar(){$('#showBar').innerHTML=theme?`<div class="showbar">${theme.e} ${theme.n}<button data-act="podyum">Podyuma Çık! ✨</button><button class="x" data-act="dcancel">✕</button></div>`:''}
+function runwayBg(){let o=`<rect x="-400" width="1200" height="640" fill="#2b1650"/>`+seeded(30,r=>star((r()*400).toFixed(0),(r()*260).toFixed(0),(2+r()*4).toFixed(1),'#ffe066',false))
+ +`<polygon points="40,0 110,0 230,640 -60,640" fill="#fff" opacity=".08"/><polygon points="290,0 360,0 460,640 170,640" fill="#ffd6ea" opacity=".08"/>`
+ +`<polygon points="160,230 240,230 360,640 40,640" fill="#ff9ccf" stroke="#fff" stroke-width="5"/><polygon points="190,230 210,230 230,640 170,640" fill="#ffc0de"/>`;
+ for(let i=0;i<9;i++){const t=i/8,y=230+t*410;o+=`<circle cx="${(160-120*t).toFixed(0)}" cy="${y.toFixed(0)}" r="${3+t*4}" fill="#ffe066"/><circle cx="${(240+120*t).toFixed(0)}" cy="${y.toFixed(0)}" r="${3+t*4}" fill="#ffe066"/>`}
+ o+=`<rect x="110" y="40" width="180" height="56" rx="16" fill="#ff5fa2" stroke="#fff" stroke-width="5"/><text x="200" y="78" text-anchor="middle" font-family="ui-rounded,Arial Rounded MT Bold,Arial" font-weight="900" font-size="26" fill="#fff">MODA ✨ DEFİLE</text>`;
+ for(let i=0;i<12;i++){const x=i<6?-80+i*30:330+(i-6)*30,y=560+(i%3)*24;o+=`<circle cx="${x}" cy="${y}" r="20" fill="#4a2c6a"/><rect x="${x-24}" y="${y+14}" width="48" height="60" rx="20" fill="#4a2c6a"/>`}
+ for(let i=0;i<8;i++){const x=i<4?-60+i*40:300+(i-4)*40;o+=`<g class="fl" style="animation-delay:${(i*.37)%1.3}s">${star(x,500+(i%2)*40,16,'#fff',false)}</g>`}
+ return o}
+function podyum(){if(!theme)return;const t=theme,m=t.chk(S),n=m.filter(Boolean).length;
+ const sc=[0,1,2].map(()=>Math.min(10,5+n+(Math.random()<.6?1:0))),tot=sc[0]+sc[1]+sc[2];
+ gEl.classList.add('show');$('#gTitle').textContent=`${t.e} ${t.n}`;
+ gBody.innerHTML=`<div class="runway"><svg viewBox="0 0 400 640" preserveAspectRatio="xMidYMid meet">${runwayBg()}
+  <g transform="translate(200 612)"><g class="walker"><g transform="translate(-150 -560)" filter="url(#stk)">${doll(S)}</g></g></g></svg><div class="judges" id="judges"></div></div>`;
+ [523,659,784,659,523,659,784,1046].forEach((f,i)=>tone(f,.16,'triangle',.08,i*.38));
+ const J=[['🐱','Pamuk'],['🐰','Zıpzıp'],['🐶','Karabaş']];
+ J.forEach((j,i)=>setTimeout(()=>{$('#judges').insertAdjacentHTML('beforeend',`<div class="judge"><i>${j[0]}</i><b>${sc[i]}</b><small>${j[1]} Hakem</small></div>`);tone(400+sc[i]*60,.2,'square',.07)},3400+i*700));
+ setTimeout(()=>{const cm=n>=4?'Muhteşem! Tam temaya uygun! 🤩':n===3?'Çok şık! Jüri bayıldı! 😍':n===2?'Çok tatlı olmuş! 💕':'Rengârenk ve neşeli! İpuçlarına bakarsan puanın uçar 😉';
+  $('.runway').insertAdjacentHTML('beforeend',`<div class="result"><h2>${tot>=27?'🏆':tot>=24?'🥇':'🎀'} ${tot} / 30 puan</h2><p>${cm}</p>
+   <div class="tips">${t.tips.map((x,i)=>`<span class="${m[i]?'ok':''}">${m[i]?'✅':'⬜'} ${x}</span>`).join('')}</div>
+   <div class="row"><button class="big alt" data-act="dagain">👗 Tekrar Dene</button><button class="big" data-act="dend">Bitir 🎉</button></div></div>`);
+  SND.star();confetti(tot>=24?60:24);if(tot>=24)checkTasks('defile24')},3400+3*700+400)}
+
+/* --- tırnak --- */
+const NAILC=['#ff5fa2','#e8406a','#c78bff','#7ec8ff','#7be0b4','#ffe066','#ff8a5c','#ffffff','#3b3b58','g:sim'];
+const NAILD=['💖','⭐','🌸','✨','🦋','🍓','🌈','yok'];
+let ntool={t:'c',v:'#ff5fa2'};
+const FING=[{x:118,y:122,w:44,h:200},{x:168,y:88,w:44,h:230},{x:218,y:100,w:44,h:220},{x:268,y:136,w:40,h:190}];
+function nailSvg(){const k=S.skin;let o=`<defs><linearGradient id="simG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe3f4"/><stop offset=".5" stop-color="#c9b8ff"/><stop offset="1" stop-color="#ff9ccf"/></linearGradient></defs>`;
+ o+=`<rect x="-400" y="-200" width="1200" height="900" fill="#fff3f9"/>`+seeded(20,r=>heart((r()*400).toFixed(0),(r()*420).toFixed(0),7,'#ffd6ea','stroke="none"'));
+ const nail=(i,x,y,w)=>{const n=S.nails[i],f=!n?'#ffe9e3':n.c==='g:sim'?'url(#simG)':n.c;
+  return `<g data-n="${i}" style="cursor:pointer"><rect x="${x+7}" y="${y+8}" width="${w-14}" height="48" rx="${(w-14)/2}" fill="${f}" stroke="${OL}" stroke-width="2.5"/>`
+  +(n&&n.c==='g:sim'?star(x+w/2-6,y+24,4,'#fff',false)+star(x+w/2+6,y+42,3,'#fff',false):'')
+  +(n?`<rect x="${x+12}" y="${y+14}" width="5" height="18" rx="2.5" fill="#fff" opacity=".6"/>`:'')
+  +(n&&n.d?`<text x="${x+w/2}" y="${y+34}" font-size="22" text-anchor="middle" dominant-baseline="central">${n.d}</text>`:'')+`</g>`};
+ o+=`<g transform="rotate(-30 132 390)"><rect x="109" y="214" width="46" height="176" rx="23" fill="${k}" stroke="${OL}" stroke-width="3"/>${nail(0,109,214,46)}</g>`;
+ FING.forEach((f,i)=>{o+=`<rect x="${f.x}" y="${f.y}" width="${f.w}" height="${f.h}" rx="${f.w/2}" fill="${k}" stroke="${OL}" stroke-width="3"/>`+nail(i+1,f.x,f.y,f.w)});
+ o+=P("M108 290 L312 290 Q320 380 296 430 L126 430 Q100 380 108 290 Z",k)+`<rect x="100" y="400" width="220" height="40" fill="${k}"/>`+L("M110 300 Q210 312 310 300",shade(k,.85),2);
+ o+=`<rect x="92" y="392" width="236" height="22" rx="11" fill="#ff9ccf" stroke="${OL}" stroke-width="3"/>`+[120,160,200,240,280].map(x=>heart(x,403,5,'#fff')).join('');
+ return o}
+function nailTools(){return `<h3>💅 Oje Rengi</h3><div class="sws">`+NAILC.map(c=>`<button class="sw ${ntool.t==='c'&&ntool.v===c?'sel':''}" style="--c:${c==='g:sim'?'linear-gradient(135deg,#ffe3f4,#c9b8ff,#ff9ccf)':c}" data-act="ntool" data-v="c|${c}">${c==='g:sim'?'✨':''}</button>`).join('')+`</div>
+ <h3>🎀 Süsler</h3><div class="emo">`+NAILD.map((d,i)=>`<button class="${ntool.t==='d'&&ntool.v===d?'sel':''}" style="${rot(i)}" data-act="ntool" data-v="d|${d}">${d==='yok'?'🚫':d}</button>`).join('')+`</div>
+ <div class="hint" style="margin-top:16px">Önce bir renk ya da süs seç, sonra tırnağa dokun! 💅</div>
+ <div class="row"><button class="big alt" data-act="nall">🎨 Hepsini Boya</button><button class="big alt" data-act="nclear">🧽 Temizle</button></div><button class="big" data-act="ndone">✅ Bitti!</button>`}
+function renderNails(){$('#nSvg').innerHTML=nailSvg();$('#nTools').innerHTML=nailTools()}
+
+/* --- pasta --- */
+const CBASE=['#ffd6a5','#8b5a3c','#fff3d6','#ffb3c7','#c9a0ff'],CCREAM=['#ff9ccf','#ffffff','#c78bff','#7ec8ff','#7be0b4','#ffe066','#6b3e26'];
+const CTOP=['🍓','🍒','🫐','🍬','🍫','⭐','🌸','🍭','mum'];
+let ctool='🍓';
+function cakeSvg(){const c=S.cake,b=c.base,k=c.cream;let o=`<rect x="-400" y="-200" width="1200" height="900" fill="#fff3f9"/>`+seeded(18,r=>star((r()*400).toFixed(0),(r()*200).toFixed(0),5,'#ffd6ea',false));
+ o+=`<rect x="-400" y="330" width="1200" height="400" fill="#f6c9a8"/>`+E(200,360,175,32,'#fff')+E(200,356,150,24,'#ffe6f2',NS);
+ o+=P("M80 250 L320 250 L320 350 Q200 372 80 350 Z",b)+E(200,250,120,20,k)+P("M80 250 Q86 286 98 272 Q108 296 120 268 Q134 300 150 270 Q166 296 182 268 Q198 300 214 270 Q230 294 246 268 Q262 298 278 270 Q292 292 304 270 Q314 286 320 250 Z",k)
+  +P("M120 170 L280 170 L280 252 L120 252 Z",b)+E(200,170,80,18,k)+P("M120 170 Q126 204 138 190 Q150 214 164 188 Q178 212 192 188 Q206 214 220 188 Q234 210 248 188 Q262 208 272 190 Q278 200 280 170 Z",k);
+ for(const t of c.tops){if(t.e==='mum'){o+=`<rect x="${t.x-5}" y="${t.y-34}" width="10" height="36" rx="3" fill="#7ec8ff" stroke="${OL}" stroke-width="2.5"/>`+L(`M${t.x-5} ${t.y-24} L${t.x+5} ${t.y-30} M${t.x-5} ${t.y-12} L${t.x+5} ${t.y-18}`,'#fff',2.5)
+   +(c.lit?`<path d="M${t.x} ${t.y-56} Q${t.x+9} ${t.y-44} ${t.x} ${t.y-36} Q${t.x-9} ${t.y-44} ${t.x} ${t.y-56}Z" fill="#ffb02e" stroke="${OL}" stroke-width="2"/><path d="M${t.x} ${t.y-48} Q${t.x+4} ${t.y-42} ${t.x} ${t.y-38} Q${t.x-4} ${t.y-42} ${t.x} ${t.y-48}Z" fill="#fff6a8"/>`
+   :`<path d="M${t.x} ${t.y-38} q6 -10 0 -18 q-6 -8 2 -16" fill="none" stroke="#bbb" stroke-width="3" stroke-linecap="round" opacity=".8"/>`)}
+  else o+=`<text x="${t.x}" y="${t.y}" font-size="30" text-anchor="middle" dominant-baseline="central">${t.e}</text>`}
+ return o}
+function cakeTools(){return `<h3>🍰 Kek Rengi</h3>`+swatches(CBASE,'cbase',S.cake.base)+`<h3>🍦 Krema</h3>`+swatches(CCREAM,'ccream',S.cake.cream)
+ +`<h3>🍓 Süsler</h3><div class="emo">`+CTOP.map((e,i)=>`<button class="${ctool===e?'sel':''}" style="${rot(i)}" data-act="ctool" data-v="${e}">${e==='mum'?'🕯️<small>Mum</small>':e}</button>`).join('')+`</div>
+ <div class="hint" style="margin-top:16px">Süsü seç, pastaya dokun! Mum dikip üflemeyi unutma 🎂</div>
+ <div class="row"><button class="big alt" data-act="cclear">🧽 Temizle</button>${S.cake.lit?`<button class="big" data-act="cblow">🌬️ Mumları Üfle</button>`:`<button class="big" data-act="clight">🔥 Mumları Yak</button>`}</div>`}
+function renderCake(){$('#cSvg').innerHTML=cakeSvg();$('#cTools').innerHTML=cakeTools()}
+
+const G={
+ defile:{open:themeCard},
+ tirnak:{open(){$('#gTitle').textContent='💅 Tırnak Salonu';gBody.innerHTML=`<div class="gwrap"><div class="gstage"><svg id="nSvg" viewBox="10 60 380 380" preserveAspectRatio="xMidYMid meet"></svg></div><div class="content" id="nTools"></div></div>`;
+  renderNails();$('#nSvg').addEventListener('click',e=>{const g=e.target.closest('[data-n]');if(!g)return;const i=+g.dataset.n;
+   if(ntool.t==='c'){S.nails[i]={c:ntool.v,d:S.nails[i]?S.nails[i].d:null};tone(800,.08,'sine',.12);tone(1100,.08,'sine',.1,.06)}
+   else{if(!S.nails[i]){SND.no();toast('Önce tırnağı boya 💅',1500);return}S.nails[i].d=ntool.v==='yok'?null:ntool.v;SND.pop()}
+   save();renderNails()})}},
+ pasta:{open(){$('#gTitle').textContent='🎂 Pasta Atölyesi';gBody.innerHTML=`<div class="gwrap"><div class="gstage"><svg id="cSvg" viewBox="40 90 320 300" preserveAspectRatio="xMidYMid meet"></svg></div><div class="content" id="cTools"></div></div>`;
+  renderCake();$('#cSvg').addEventListener('click',e=>{const p=gPt($('#cSvg'),e),x=Math.round(p.x),y=Math.round(p.y);
+   const on=(x>=124&&x<=276&&y>=156&&y<=252)||(x>=84&&x<=316&&y>=236&&y<=358);if(!on)return;
+   S.cake.tops.push({e:ctool,x,y});if(S.cake.tops.length>45)S.cake.tops.shift();if(ctool==='mum')S.cake.lit=true;SND.pop();save();renderCake()})}}
+};
+function gameAct(a,v,btn){
+ switch(a){
+  case 'game':openGame(v);return true;
+  case 'gclose':closeGame();SND.tap();return true;
+  case 'dnew':SND.tap();themeCard();return true;
+  case 'dstart':theme=lastTheme;closeGame();showBar();SND.pop();toast(`${theme.e} Tema: ${theme.n}! Hazırlanınca "Podyuma Çık"a bas`,3200);return true;
+  case 'podyum':podyum();return true;
+  case 'dcancel':theme=null;showBar();SND.tap();return true;
+  case 'dagain':closeGame();SND.tap();return true;
+  case 'dend':theme=null;showBar();closeGame();SND.tap();return true;
+  case 'ntool':{const [t,x]=v.split('|');ntool={t,v:x};SND.tap();$('#nTools').innerHTML=nailTools();return true}
+  case 'nall':if(ntool.t!=='c'){toast('Önce bir oje rengi seç 💅',1500);return true}S.nails=S.nails.map(n=>({c:ntool.v,d:n?n.d:null}));SND.star();save();renderNails();return true;
+  case 'nclear':S.nails=[null,null,null,null,null];SND.pop();save();renderNails();return true;
+  case 'ndone':if(S.nails.every(Boolean)){SND.star();confetti(40);toast('Harika tırnaklar! 💅✨',2200);checkTasks('tirnak')}else{SND.no();toast('Önce 5 tırnağı da boya 💅',1800)}return true;
+  case 'cbase':S.cake.base=v;SND.pop();save();renderCake();return true;
+  case 'ccream':S.cake.cream=v;SND.pop();save();renderCake();return true;
+  case 'ctool':ctool=v;SND.tap();$('#cTools').innerHTML=cakeTools();return true;
+  case 'cclear':S.cake.tops=[];S.cake.lit=true;SND.pop();save();renderCake();return true;
+  case 'clight':S.cake.lit=true;tone(600,.1);save();renderCake();return true;
+  case 'cblow':{if(!S.cake.tops.some(t=>t.e==='mum')){SND.no();toast('Önce pastaya mum dik 🕯️',1800);return true}
+   S.cake.lit=false;for(let i=0;i<10;i++)tone(900-i*60,.06,'sawtooth',.03,i*.03);setTimeout(()=>[523,523,587,523,698,659].forEach((f,i)=>tone(f,.28,'triangle',.12,i*.3)),400);
+   confetti(50);toast('İyi ki doğdun! 🎉🎂',2500);save();renderCake();if(S.cake.tops.length>=5)checkTasks('pasta');else setTimeout(()=>toast('Görev için en az 5 süs koy 🍓',2200),2700);return true}
+ }
+ return false}
 
 /* =====================  başlangıç  ===================== */
 function openStart(){$('#nameIn').value=S.name||'';$('#mStart').classList.add('show')}
