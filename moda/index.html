@@ -20,9 +20,10 @@ body{font-family:ui-rounded,"SF Pro Rounded","Arial Rounded MT Bold","Nunito",sy
  -webkit-user-select:none;user-select:none;-webkit-touch-callout:none;touch-action:manipulation;
  background:#ffe6f2 radial-gradient(#ffc9e2 2.5px,transparent 3px) 0 0/30px 30px}
 button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;padding:0}
-#app{display:grid;height:100vh;height:100dvh;grid-template-columns:1fr minmax(380px,46%);gap:14px;
+#app{display:grid;height:100vh;height:100dvh;grid-template-columns:minmax(0,1fr) minmax(360px,46%);gap:14px;
  padding:max(12px,env(safe-area-inset-top)) max(12px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left))}
-@media (orientation:portrait){#app{grid-template-columns:1fr;grid-template-rows:54% 1fr}}
+@media (orientation:portrait){#app{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,54fr) minmax(0,46fr)}}
+.stagebox,.panel{min-width:0;min-height:0}
 
 /* ---------- sahne ---------- */
 .stagebox{position:relative;background:#fff;border-radius:32px;padding:8px;display:flex;flex-direction:column;min-height:0;
@@ -36,7 +37,8 @@ button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;paddin
  box-shadow:0 0 0 3px #ffd3e8,0 5px 0 #f4b6d3;transition:transform .12s}
 .tbtn:active{transform:translateY(3px) scale(.94);box-shadow:0 0 0 3px #ffd3e8,0 2px 0 #f4b6d3}
 .tbtn.cam{background:linear-gradient(#ff8cc0,#ff5fa2);box-shadow:0 0 0 3px #fff,0 5px 0 #d94584}
-#stage{flex:1;min-height:0;width:100%;border-radius:24px;display:block;touch-action:none}
+.stagewrap{flex:1;min-height:0;position:relative;border-radius:24px;overflow:hidden;-webkit-mask-image:-webkit-radial-gradient(white,black)}
+#stage{position:absolute;left:0;top:0;width:100%;height:100%;display:block;touch-action:none}
 #trash{position:absolute;left:22px;bottom:22px;width:74px;height:74px;border-radius:50%;background:#fff;display:none;place-items:center;font-size:38px;
  box-shadow:0 0 0 4px #ff9ccf,0 6px 14px rgba(0,0,0,.2)}
 #trash.show{display:grid}#trash.hot{transform:scale(1.25);background:#ffe0ee}
@@ -141,7 +143,7 @@ h3:not(:first-child){margin-top:22px}
    <button class="tbtn" id="btnGal" aria-label="Galeri">🖼️</button>
    <button class="tbtn cam" id="btnPhoto" aria-label="Fotoğraf çek">📸</button>
   </div>
-  <svg id="stage" viewBox="0 0 400 640" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+  <div class="stagewrap" id="stageWrap"><svg id="stage" viewBox="0 0 400 640" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
    <defs>
     <filter id="stk" x="-20%" y="-12%" width="140%" height="126%">
      <feMorphology in="SourceAlpha" operator="dilate" radius="6" result="d"/>
@@ -163,7 +165,7 @@ h3:not(:first-child){margin-top:22px}
    <g transform="translate(330 604) scale(1.05)"><g id="petInner" filter="url(#stk)"></g></g>
    <g id="stkLayer" filter="url(#stk2)"></g>
    <g id="tag" filter="url(#stk2)"></g>
-  </svg>
+  </svg></div>
   <div id="trash">🗑️</div>
  </div>
  <div class="panel">
@@ -576,13 +578,15 @@ document.addEventListener('gesturestart',e=>e.preventDefault());
 document.addEventListener('dblclick',e=>e.preventDefault());
 
 /* sahneyi kutuya sığdır: bebek hep tam görünür, arka plan taşar */
-function fit(){const r=stageEl.getBoundingClientRect();if(!r.width||!r.height)return;const ar=r.width/r.height;let x=0,y=0,w=400,h=640;
+let fitRaf=0,lastWH='';
+function fit(){cancelAnimationFrame(fitRaf);fitRaf=requestAnimationFrame(doFit)}
+function doFit(){const r=$('#stageWrap').getBoundingClientRect();const wh=Math.round(r.width)+'x'+Math.round(r.height);if(wh===lastWH)return;lastWH=wh;if(!r.width||!r.height)return;const ar=r.width/r.height;let x=0,y=0,w=400,h=640;
  if(ar>400/640){w=640*ar;x=(400-w)/2}else{h=400/ar;y=(640-h)/2}
  stageEl.setAttribute('viewBox',`${x.toFixed(1)} ${y.toFixed(1)} ${w.toFixed(1)} ${h.toFixed(1)}`);
  const k=Math.max(1,h/640)*1.002;$('#bgWrap').setAttribute('transform',`translate(200 320) scale(${k.toFixed(4)}) translate(-200 -320)`)}
-addEventListener('resize',fit);addEventListener('orientationchange',()=>setTimeout(fit,300));
-if(window.ResizeObserver)new ResizeObserver(fit).observe(stageEl);
-renderStage();renderPanel();fit();
+addEventListener('resize',fit);addEventListener('orientationchange',()=>{lastWH='';setTimeout(fit,350);setTimeout(fit,800)});
+if(window.ResizeObserver)new ResizeObserver(fit).observe($('#stageWrap'));
+renderStage();renderPanel();doFit();
 if(!S.name)openStart();
 </script>
 </body>

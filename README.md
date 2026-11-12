@@ -2,7 +2,7 @@
 
 iPad için 3D sanal kurbağa oyunu. Besle, yıkat, uyut, sinek yakala, kakaları temizle!
 
-Oyna: https://huseyincinarmacar59-cell.github.io/kurba-a/
+Oyna: https://huseyincinarmacar59-cell.github.io/inci/
 
 iPad: Safari ile aç, Paylaş, Ana Ekrana Ekle.
 
@@ -12,4 +12,4 @@ iPad: Safari ile aç, Paylaş, Ana Ekrana Ekle.
 
 Sticker tarzı moda bebek oyunu (iPad). Giydir, saç-makyaj yap, dost seç, sticker yapıştır, fotoğraf çek, görevlerle sürprizleri aç!
 
-Oyna: https://huseyincinarmacar59-cell.github.io/kurba-a/moda/
+Oyna: https://huseyincinarmacar59-cell.github.io/inci/moda/
